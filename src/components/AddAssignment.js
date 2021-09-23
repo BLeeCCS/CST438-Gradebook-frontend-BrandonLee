@@ -39,20 +39,27 @@ class AddAssignment extends Component {
       event.preventDefault();
       const token = Cookies.get('XSRF-TOKEN');
 
-      var assignmentName = this.state.assignmentName;
-      var dueDate = this.state.dueDate;
-      var courseName = this.state.courseName
+      let assignmentName = this.state.assignmentName;
+      let dueDate = this.state.dueDate;
+      let courseName = this.state.courseName
     
       console.log(assignmentName)
       console.log(dueDate)
       console.log(courseName)
 
-      
+      let data = {
+        name: assignmentName,
+        dueDate: dueDate,
+        courseName: courseName
+      }
+
     fetch(`${SERVER_URL}/gradebook/addAssignment`,
       {
         method: 'POST',
-        headers: { 'X-XSRF-TOKEN': token },
-        body: JSON.stringify({name: assignmentName, dueDate:dueDate, course:courseName})
+        headers: { 'X-XSRF-TOKEN': token,
+                    'Accept': 'application/json',
+				            'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       })
     .then(res => {
       if (res.ok) {
