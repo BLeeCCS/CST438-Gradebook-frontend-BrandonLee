@@ -42,10 +42,6 @@ class AddAssignment extends Component {
       let assignmentName = this.state.assignmentName;
       let dueDate = this.state.dueDate;
       let courseName = this.state.courseName
-    
-      console.log(assignmentName)
-      console.log(dueDate)
-      console.log(courseName)
 
       let data = {
         name: assignmentName,
