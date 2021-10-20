@@ -79,14 +79,14 @@ class AddAssignment extends Component {
   render() {
        return (
           <div>
-            <div className="App">
+            <div className="App" id="App">
               <form onSubmit={this.mySubmitHandler} >
                 <p>Assignment Name</p>
-                <input name='assignmentName' onChange={this.assignmentChangeHandler} />
+                <input name='assignmentName' onChange={this.assignmentChangeHandler} id="assignmentName"/>
                 <p>Course ID</p>
-                <input variant="outlined" type="number" name='courseName' onChange={this.courseNameChangeHandler}/>
+                <input variant="outlined" type="number" name='courseName' onChange={this.courseNameChangeHandler} id="courseId"/>
                 <p>Due Date</p>
-                <input type="date" name='dueDate' onChange={this.dueDateChangeHandler}  />
+                <input type="date" name='dueDate' onChange={this.dueDateChangeHandler}  id="dueDate"/>
                 <br></br>
                 <br></br>
                 <input type="submit"/>
